@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Engineering College, Bharuch - About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Include Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- About Section -->
+    <section class="about-content">
+        <div class="container">
+            <h2 class="section-title">ABOUT</h2>
+            <div class="about-text">
+                <p>Established in July, 2004, Government Engineering College, Bharuch is one of the eight New Government Engineering Colleges in Gujarat. The Institute aims to produce skilled engineers in various domains, such as Electrical Engineering, Mechanical Engineering, Electronics & Communication Engineering, Civil Engineering and Chemical Engineering. The institute provides a high-quality learning environment for the students, with the help of experienced faculty members and experts from the industry.</p>
+                
+                <p>The institute is affiliated to Gujarat Technological University, Ahmedabad and approved by All India Council for Technical Education (AICTE). The institute is under the administration of Education Department, Gujarat state.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Bharuch City -->
+    <section class="city-section" id="about-city">
+        <div class="container">
+            <h2>ABOUT BHARUCH CITY</h2>
+            <h3>Ancient Port City of Gujarat</h3>
+            <div style="margin-top: 40px;">
+                <p>Bharuch is a district in the southern Gujarat peninsula, on the west coast of India. It has a similar size and population to Greater Boston. It is located at the mouth of the Narmada River, which connects it to the inland locations of Surat peninsula on which Gujarat is situated, making connections to the West, such as Egypt, Greece, Persia and Rome. It was part of the Shaka and Silk routes, and a hub for land and sea commerce. Bharuch's significance declined with the emergence of deep-sea navigation, as it was not a convenient location for ships that could sail across the oceans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demographics -->
+    <section class="demographics-section">
+        <div class="container">
+            <h2 class="section-title">DEMOGRAPHICS</h2>
+            <div class="about-text">
+                <p>Bharuch district is one of the 640 districts in India, ranked 321st in terms of population. According to the 2011 census, it has 1550,822 people living in an area of 288 square KM (8201sq mi), which means a population density of 298 people per square KM. The district's population increased by 13.14% from 2001 to 2011. The literacy rate in Bharuch is 83.03%, and the sex ratio is 924 females for every 1000 males.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable Personalities -->
+    <section class="personalities-section">
+        <div class="container">
+            <h2 class="section-title">NOTABLE PERSONALITIES</h2>
+            <div class="about-text">
+                <ul class="personalities-list">
+                    <li>▸ <strong>Adajinath Mulk Cricketer in IPL for Rajasthan Royals.</strong> Born in Hansot.</li>
+                    <li>▸ <strong>Adam Patel Baron Patel of Blackburn UK House of Lords.</strong></li>
+                    <li>▸ <strong>Ahmed Patel Indian Parliamentarian for the Indian National Congress.</strong></li>
+                    <li>▸ <strong>Professor Almuddin Zumla Emboladi multi-award-winning (Medicine) Medic at a prestigious London University.</strong> (University College London)</li>
+                    <li>▸ <strong>Balwantray Thakore (1869–1952) Poet.</strong> Born in Bharuch. Notable works Bhanisar (1918; Dhara Bij)Mihara Sonnet (1935).</li>
+                    <li>▸ <strong>Farooq Shaikh Actor, TV presenter and philanthropist.</strong> Ancestral village Hansot.</li>
+                    <li>▸ <strong>Kanyalayata Maneklal Munshi (1887-1971) Indian independence movement activist, politician, writer and educationist.</strong> Born in the city of Bharuch.</li>
+                    <li>▸ <strong>Munaf Patel Indian pacer of Team India.</strong> He also is part of world cup winning team India in 2011 under captaincy of M.S Dhoni. He played IPLs for Rajasthan Royals in 1st season, later on he also played for Mumbai Indians. He played Duleep trophy, he was a member of Baroda cricket team.</li>
+                    <li>▸ <strong>Rashid Patel The former Indian left-arm seamer Rashid Patel was from bharuch.</strong></li>
+                    <li>▸ <strong>Tirthanandas Luhar (1908-1989) Poet.</strong> Born in Miyanmar.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include header, navbar, and footer -->
+    <script>
+        // Function to load HTML content
+        function loadHTML(elementId, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.log('Error loading ' + file + ':', error);
+                    // Fallback content if files can't be loaded
+                    if (elementId === 'header-placeholder') {
+                        document.getElementById(elementId).innerHTML = '<p>Header content goes here</p>';
+                    }
+                });
+        }
+
+        // Load header, navbar, and footer
+        loadHTML('header-placeholder', 'header.html');
+        loadHTML('navbar-placeholder', 'navbar.html');
+        loadHTML('footer-placeholder', 'footer.html');
+    </script>
+</body>
+</html>
