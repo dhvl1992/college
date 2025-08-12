@@ -1,35 +1,324 @@
-<!-- Top Header -->
-<div class="top-header">
-    <div class="container">
-        <div class="contact-info">
-            <span>📞 +919426227064</span>
-            <span>✉️ gec-bharuch-dte@gujarat.gov.in</span>
-        </div>
-        <div class="social-links">
-            <span>🌐 📘</span>
-            <a href="#" class="student-support-btn">STUDENT SUPPORT SYSTEM</a>
-        </div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEC Bharuch - Header</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Main Header -->
-<header class="main-header">
-    <div class="container">
-        <div class="header-content">
-            <div class="college-info">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%231e3d59' stroke='%23ff6b35' stroke-width='3'/><circle cx='50' cy='40' r='15' fill='%23ff6b35'/><rect x='35' y='50' width='30' height='20' fill='%23ff6b35'/><rect x='42' y='55' width='16' height='3' fill='%23fff'/><rect x='42' y='60' width='16' height='3' fill='%23fff'/><rect x='42' y='65' width='16' height='3' fill='%23fff'/></svg>" alt="College Logo" class="logo">
-                <div class="college-details">
-                    <h1>GOVERNMENT ENGINEERING COLLEGE, BHARUCH</h1>
-                    <p>(UNDER DIRECTORATE OF TECHNICAL EDUCATION)</p>
-                    <div class="affiliations">
-                        <p>APPROVED BY AICTE</p>
-                        <p>AFFILIATED TO GUJARAT TECHNOLOGICAL UNIVERSITY</p>
-                    </div>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .top-bar {
+            background-color: #1a365d;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .top-bar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .main-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 18px;
+        }
+
+        .college-info h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .college-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .quick-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .quick-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .navigation {
+            background-color: #2c5aa0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item > a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-item:hover > a {
+            background-color: rgba(255,255,255,0.1);
+            border-bottom-color: #ffd700;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-header .container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .quick-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-item > a {
+                padding: 12px 20px;
+                border-left: 3px solid transparent;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:hover > a {
+                border-left-color: #ffd700;
+                border-bottom-color: rgba(255,255,255,0.1);
+            }
+        }
+
+        .highlight {
+            color: #ffd700;
+        }
+
+        .accreditation-badge {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Top Contact Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span>📧 gec-bharuch-dte@gujarat.gov.in</span>
+                    <span>📞 +91-2642-227054</span>
+                </div>
+                <div class="quick-links">
+                    <a href="#admission">Admissions</a>
+                    <a href="#placement">Placements</a>
+                    <a href="#alumni">Alumni</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
-            <div class="govt-section">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ff6b35' stroke='%23333' stroke-width='2'/><text x='50' y='30' text-anchor='middle' fill='%23fff' font-size='8' font-weight='bold'>भारत सरकार</text><text x='50' y='45' text-anchor='middle' fill='%23fff' font-size='8' font-weight='bold'>GOVERNMENT</text><text x='50' y='55' text-anchor='middle' fill='%23fff' font-size='8' font-weight='bold'>OF INDIA</text><circle cx='50' cy='70' r='8' fill='%23fff'/><text x='50' y='74' text-anchor='middle' fill='%23ff6b35' font-size='6'>⚛</text></svg>" alt="Government Emblem" class="govt-emblem">
+        </div>
+
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="container">
+                <div class="logo-section">
+                    <div class="logo">GEC</div>
+                    <div class="college-info">
+                        <h1>Government Engineering College, Bharuch</h1>
+                        <p>Near K J Polytechnic, Old National Highway-8, Bholav, BHARUCH – 392 002</p>
+                        <span class="accreditation-badge">NBA Accredited</span>
+                    </div>
+                </div>
+                <div class="quick-links">
+                    <a href="#student-portal">Student Portal</a>
+                    <a href="#faculty-portal">Faculty Portal</a>
+                    <a href="#library">Library</a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+
+        <!-- Navigation Menu -->
+        <nav class="navigation">
+            <div class="nav-container">
+                <div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/about/">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/academics/">ACADEMICS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/departments/">DEPARTMENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/campus/">CAMPUS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/placement/">PLACEMENT CELL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/e-cell-ssip-cell/">E-CELL/SSIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/campus/research-projects-and-consultancy-cell/">RPC CELL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/chapters/">CHAPTERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/women-developement-activity/">WDC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/alumni-association/">ALUMNI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/facilities-placement-ssip/">FACILITIES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/activities/">ACTIVITIES</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
