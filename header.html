@@ -12,20 +12,20 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
         }
 
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .top-bar {
-            background-color: #1a365d;
-            padding: 8px 0;
-            font-size: 13px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 12px 0;
+            font-size: 14px;
+            color: white;
         }
 
         .top-bar .container {
@@ -39,17 +39,55 @@
 
         .contact-info {
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            align-items: center;
         }
 
         .contact-info span {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .student-support-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .student-support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
 
         .main-header {
-            padding: 15px 0;
+            padding: 20px 0;
+            background: white;
         }
 
         .main-header .container {
@@ -64,54 +102,81 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .logo {
-            width: 60px;
-            height: 60px;
-            background: white;
+        .college-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 24px;
             font-weight: bold;
-            color: #1e3c72;
-            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .college-logo::before {
+            content: '⚙️';
+            font-size: 35px;
         }
 
         .college-info h1 {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3c72;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        .college-info p {
+        .college-info .subtitle {
             font-size: 14px;
-            opacity: 0.9;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 8px;
         }
 
-        .quick-links {
+        .accreditation-section {
+            text-align: right;
             display: flex;
-            gap: 15px;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .accreditation-text {
             font-size: 13px;
+            color: #333;
+            font-weight: 600;
         }
 
-        .quick-links a {
+        .govt-emblem {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            transition: background-color 0.3s;
+            font-size: 20px;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
         }
 
-        .quick-links a:hover {
-            background-color: rgba(255,255,255,0.2);
+        .govt-emblem::before {
+            content: '🇮🇳';
+            font-size: 25px;
         }
 
         .navigation {
-            background-color: #2c5aa0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
         }
 
         .nav-container {
@@ -134,40 +199,109 @@
             display: block;
             color: white;
             text-decoration: none;
-            padding: 15px 20px;
+            padding: 18px 24px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-item:hover > a {
-            background-color: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             border-bottom-color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active > a {
+            background: rgba(255,255,255,0.1);
+            border-bottom-color: #ffd700;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 280px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px);
+            transition: all 0.4s ease;
+            z-index: 1000;
+            border-radius: 0 0 12px 12px;
+            border-top: 3px solid #ffd700;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            list-style: none;
+        }
+
+        .dropdown-item > a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-item:hover > a {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #1e3c72;
+            padding-left: 35px;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .dropdown-item:last-child > a {
+            border-bottom: none;
+            border-radius: 0 0 12px 12px;
         }
 
         .mobile-menu-toggle {
             display: none;
             color: white;
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255,255,255,0.2);
         }
 
         @media (max-width: 768px) {
             .top-bar .container {
                 flex-direction: column;
-                gap: 10px;
-            }
-
-            .main-header .container {
-                flex-direction: column;
                 gap: 15px;
                 text-align: center;
             }
 
-            .quick-links {
-                flex-wrap: wrap;
-                justify-content: center;
+            .main-header .container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .college-info h1 {
+                font-size: 22px;
+            }
+
+            .accreditation-section {
+                align-items: center;
             }
 
             .mobile-menu-toggle {
@@ -178,6 +312,11 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
+                background: rgba(30, 60, 114, 0.95);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                border-radius: 0 0 15px 15px;
             }
 
             .nav-menu.active {
@@ -185,14 +324,26 @@
             }
 
             .nav-item > a {
-                padding: 12px 20px;
+                padding: 15px 25px;
                 border-left: 3px solid transparent;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             .nav-item:hover > a {
                 border-left-color: #ffd700;
-                border-bottom-color: rgba(255,255,255,0.1);
+                transform: translateX(10px);
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+                background: rgba(255,255,255,0.95);
+                border-radius: 0;
+                border-top: none;
+                border-left: 3px solid #ffd700;
             }
         }
 
@@ -200,14 +351,37 @@
             color: #ffd700;
         }
 
-        .accreditation-badge {
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hover effects */
+        .nav-item > a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
             background: #ffd700;
-            color: #1e3c72;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover > a::after {
+            width: 80%;
+            left: 10%;
         }
     </style>
 </head>
@@ -217,15 +391,14 @@
         <div class="top-bar">
             <div class="container">
                 <div class="contact-info">
-                    <span>📧 gec-bharuch-dte@gujarat.gov.in</span>
-                    <span>📞 +91-2642-227054</span>
+                    <span>📞 +912642227054</span>
+                    <span>✉️ gec-bharuch-dte@gujarat.gov.in</span>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
                 </div>
-                <div class="quick-links">
-                    <a href="#admission">Admissions</a>
-                    <a href="#placement">Placements</a>
-                    <a href="#alumni">Alumni</a>
-                    <a href="#contact">Contact</a>
-                </div>
+                <a href="#" class="student-support-btn">STUDENT SUPPORT SYSTEM</a>
             </div>
         </div>
 
@@ -233,17 +406,16 @@
         <div class="main-header">
             <div class="container">
                 <div class="logo-section">
-                    <div class="logo">GEC</div>
+                    <div class="college-logo"></div>
                     <div class="college-info">
-                        <h1>Government Engineering College, Bharuch</h1>
-                        <p>Near K J Polytechnic, Old National Highway-8, Bholav, BHARUCH – 392 002</p>
-                        <span class="accreditation-badge">NBA Accredited</span>
+                        <h1>GOVERNMENT ENGINEERING COLLEGE, BHARUCH</h1>
+                        <p class="subtitle">(UNDER DIRECTORATE OF TECHNICAL EDUCATION)</p>
                     </div>
                 </div>
-                <div class="quick-links">
-                    <a href="#student-portal">Student Portal</a>
-                    <a href="#faculty-portal">Faculty Portal</a>
-                    <a href="#library">Library</a>
+                <div class="accreditation-section">
+                    <div class="accreditation-text">APPROVED BY AICTE</div>
+                    <div class="accreditation-text">AFFILIATED TO GUJARAT TECHNOLOGICAL UNIVERSITY</div>
+                    <div class="govt-emblem"></div>
                 </div>
             </div>
         </div>
@@ -253,44 +425,104 @@
             <div class="nav-container">
                 <div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
                 <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/">HOME</a>
+                    <li class="nav-item active">
+                        <a href="https://gecbharuch.com/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/about/">ABOUT</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/">About GEC Bharuch</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/organizational-chart/">Organizational Chart</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/institute-committees/">Institute Committees</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/newsletters/">Newsletters</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/aicte-eoa/">AICTE EOA</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/gtu-affiliation/">GTU Affiliation Letter</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/nirf/">National Institutional Ranking Framework</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/disclosure/">Disclosure</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/mandatory-disclosure/">Mandatory Disclosure</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/audited-account/">Audited Account Statement</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/service-rules/">Service Rules</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/accreditation/">Accreditation Details</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/about/contact-us/">Contact Us</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/academics/">ACADEMICS</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/academics/admissions/">BE Admissions and Courses</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/academics/calendar/">Academic Calendar</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/academics/examination/">Examination</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/academics/student-corner/">Student Corner</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/departments/">DEPARTMENTS</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/general/">General Department</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/mechanical/">Mechanical Engineering</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/administrative/">Administrative</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/chemical/">Chemical Engineering</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/civil/">Civil Engineering</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/electrical/">Electrical Engineering</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/ece/">Electronics & Communication Engineering</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/departments/computer/">Computer Engineering</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/campus/">CAMPUS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/placement/">PLACEMENT CELL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/e-cell-ssip-cell/">E-CELL/SSIP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/campus/research-projects-and-consultancy-cell/">RPC CELL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/chapters/">CHAPTERS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/women-developement-activity/">WDC</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://gecbharuch.com/alumni-association/">ALUMNI</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/infrastructure/">Infrastructure</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/library/">Library</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/hostel/">Hostel</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/labs/">Laboratories</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/sports/">Sports</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/research-projects-and-consultancy-cell/">RPC Cell</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/facilities-placement-ssip/">FACILITIES</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item has-submenu">
+                                <a href="https://gecbharuch.com/placement/">Placement Cell</a>
+                                <ul class="sub-dropdown">
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/about/">About T&P Cell</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/policy/">Placement Policy</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/undertaking/">Undertaking(One Student One Job)</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/brochure/">Placement Brochure</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/recruiters/">Our Esteemed Recruiters</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/programs/">Programs Under Placement Cell</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/statistics/">Placement Statistics</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/blog/">T&P Blog</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/formats/">Placement Formats</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/gallery/">PHOTO GALLERY</a></li>
+                                    <li class="dropdown-item"><a href="https://gecbharuch.com/placement/tour/">Tour of Placement Cell</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/e-cell-ssip-cell/">E-Cell/SSIP Cell</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/training-organized/">Training Organized</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/campus/research-projects-and-consultancy-cell/">RPC Cell</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/chapters/">Chapters</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/women-developement-activity/">Women Development Cell</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/alumni-association/">Alumni Association</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="https://gecbharuch.com/activities/">ACTIVITIES</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/chapters/">Chapters</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/activities/student-activities/">Student Activities</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/activities/cultural/">Cultural Events</a></li>
+                            <li class="dropdown-item"><a href="https://gecbharuch.com/activities/technical/">Technical Events</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://gecbharuch.com/about/legal-forms/">USEFUL LINKS</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-item"><a href="https://gtu.ac.in/">GTU</a></li>
+                            <li class="dropdown-item"><a href="https://www.aicte-india.org/">AICTE</a></li>
+                            <li class="dropdown-item"><a href="https://www.ugc.ac.in/">UGC</a></li>
+                            <li class="dropdown-item"><a href="https://gujaratindia.gov.in/">Government of Gujarat</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -317,6 +549,27 @@
             
             if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
                 navMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add active state to current page
+        const currentPage = window.location.pathname;
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.parentElement.classList.add('active');
             }
         });
     </script>
