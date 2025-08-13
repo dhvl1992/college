@@ -5,992 +5,758 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEC Bharuch - Government Engineering College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
-        /* Reset and base styles */
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
             line-height: 1.6;
+            color: #333;
         }
 
-        /* Loading styles */
-        .loading {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Carousel */
+        .hero-carousel {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: #1e3c72;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            height: 100%;
+        }
+
+        .carousel-slides {
             display: flex;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            padding: 40px;
-            color: #666;
-        }
-
-        /* Header styles - Combined from header file */
-        .header {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .top-bar {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 12px 0;
-            font-size: 14px;
-            color: white;
-        }
-
-        .top-bar .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            color: #ff6b35;
-        }
-
-        .student-support-btn {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .student-support-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .main-header {
-            padding: 20px 0;
-            background: white;
-        }
-
-        .main-header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .college-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
-            object-fit: cover;
-            border: 3px solid #1e3c72;
-        }
-
-        .college-info h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1e3c72;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .college-info .subtitle {
-            font-size: 14px;
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .accreditation-section {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 8px;
-        }
-
-        .accreditation-text {
-            font-size: 13px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .govt-emblem {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
-            object-fit: cover;
-            border: 2px solid #ff6b35;
-        }
-
-        /* Navigation */
-        .navigation {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             position: relative;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-menu > li {
-            position: relative;
-        }
-
-        .nav-menu > li > a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 18px 16px;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .nav-menu > li > a:hover,
-        .nav-menu > li:focus-within > a {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        /* Dropdown styles */
-        .dropdown {
-            position: absolute;
-            left: 0;
-            top: 100%;
-            min-width: 280px;
-            padding: 10px;
-            background: white;
-            border: 1px solid rgba(148, 163, 184, 0.15);
-            border-radius: 14px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            display: none;
-            z-index: 1000;
-        }
-
-        .nav-menu > li:hover > .dropdown,
-        .nav-menu > li:focus-within > .dropdown {
-            display: block;
-        }
-
-        .dropdown a.item {
-            display: flex;
-            gap: 10px;
-            padding: 12px 15px;
-            border-radius: 10px;
-            color: #333;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown a.item:hover {
-            background: rgba(148, 163, 184, 0.12);
-            color: #1e3c72;
-        }
-
-        /* Main content styles - from the home page */
-        :root{
-            --bg:#f7fafc;
-            --ink:#0f172a;
-            --muted:#475569;
-            --brand:#ea580c;
-            --brand-2:#0ea5e9;
-            --panel:#ffffff;
-            --line:#e2e8f0;
-            --dark:#0b2442;
-        }
-
-        .hero{
-            position:relative;overflow:hidden;background:#0b2442;color:#fff;
-            margin-top: 0;
-        }
-        .slides{display:flex;transition:transform .6s ease}
-        .slide{
-            min-width:100%;
-            display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;
-            padding:40px 16px;
-        }
-        .slide:nth-child(odd){background:linear-gradient(180deg,#0b2442 0%, #10315c 100%)}
-        .slide:nth-child(even){background:linear-gradient(180deg,#10315c 0%, #0b2442 100%)}
-        .slide h1{font-size:32px;margin:0 0 8px}
-        .slide p{color:#d1e0ee;margin:0 0 16px}
-        .slide .cta{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600}
-
-        .hero .photo{border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-        .hero-nav{
-            position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
-            display:flex;gap:8px;z-index:5;
-        }
-        .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.45);cursor:pointer;border:0}
-        .dot.active{background:#fff}
-        .hero .controls{
-            position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;pointer-events:none;
-        }
-        .hero .btn{
-            pointer-events:auto;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
-            background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;margin:0 6px
-        }
-        .news-ticker{
-            background:#08223f;color:#d6e4f5;border-top:1px solid rgba(255,255,255,.15);
-            overflow:hidden;white-space:nowrap;
-        }
-        .ticker-inner{display:inline-block;padding:8px 0;animation:ticker 24s linear infinite}
-        .ticker-inner a{color:#fff;text-decoration:underline}
-        @keyframes ticker{
-            0%{transform:translateX(100%)}
-            100%{transform:translateX(-100%)}
-        }
-
-        .container{max-width:1200px;margin:0 auto;padding:0 16px}
-
-        .principal{background:var(--panel);margin:28px auto;border-radius:16px;border:1px solid var(--line);padding:24px}
-        .principal .wrap{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center}
-        .principal img{border-radius:14px}
-        .principal h2{margin:0 0 8px}
-        .principal p{color:var(--muted)}
-        .principal .btn{display:inline-block;margin-top:10px;background:var(--brand-2);color:#fff;padding:10px 14px;border-radius:10px;font-weight:600}
-
-        .section{padding:16px 0 6px}
-        .section h3{font-size:24px;margin:0 0 10px}
-        .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-        .card{
-            background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
-            display:flex;flex-direction:column
-        }
-        .card .body{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
-        .card .tag{align-self:flex-start;background:#ebf5ff;color:#0b3b76;border:1px solid #cfe4ff;border-radius:999px;padding:4px 8px;font-size:12px}
-        .card .title{font-weight:700}
-        .card .btn{align-self:flex-start;padding:8px 12px;border-radius:10px;background:var(--brand);color:#fff;font-weight:600}
-
-        .testimonials{margin:26px 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
-        .ts-track{display:flex;gap:16px;transition:transform .6s ease}
-        .ts-card{
-            min-width:320px;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;
-            box-shadow:0 8px 20px rgba(0,0,0,.06)
-        }
-        .ts-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-        .avatar{width:40px;height:40px;border-radius:50%;background:#ddd;overflow:hidden}
-        .ts-name{font-weight:700}
-        .ts-role{font-size:12px;color:var(--muted)}
-
-        .tour{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start;margin:26px 0}
-        .counter{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
-        .counter h4{margin:0 0 8px}
-        .counter .value{font-size:32px;font-weight:800;letter-spacing:1px}
-
-        .gov-strip{
-            border-top:1px solid var(--line);background:#f1f5f9;margin-top:26px
-        }
-        .gov-wrap{
-            display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;padding:14px;
-        }
-        .gov-link{
-            background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:flex;align-items:center;gap:10px;
-            transition:transform .15s ease, box-shadow .15s ease;
-        }
-        .gov-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
-
-        /* Footer styles - from footer file */
-        .footer {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            margin-top: auto;
-        }
-
-        .footer-main {
-            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
-            padding: 40px 0;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-section h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-section h4::after {
+        .carousel-slide::before {
             content: '';
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            border-radius: 2px;
+            background: rgba(30, 60, 114, 0.7);
         }
 
-        .footer-section a {
-            color: #e2e8f0;
-            text-decoration: none;
-            display: block;
-            margin: 8px 0;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 0;
+        .carousel-content {
             position: relative;
-        }
-
-        .footer-section a:hover {
-            color: #ff6b35;
-            padding-left: 15px;
-        }
-
-        .footer-section a::before {
-            content: '▶';
-            position: absolute;
-            left: -15px;
-            opacity: 0;
-            transition: all 0.3s ease;
-            font-size: 10px;
-        }
-
-        .footer-section a:hover::before {
-            opacity: 1;
-            left: 0;
-        }
-
-        .footer-bottom {
-            background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%);
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-bottom-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-social-links a {
+            z-index: 2;
+            text-align: center;
             color: white;
-            font-size: 18px;
-            width: 40px;
-            height: 40px;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .carousel-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .carousel-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .carousel-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #e55c2e;
+            transform: translateY(-2px);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: white;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-controls:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            background: #2a5298;
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .news-ticker-content {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Principal Message */
+        .principal-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .principal-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+        }
+
+        .principal-image {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            padding: 40px;
+        }
+
+        .principal-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .principal-content {
+            padding: 40px;
+        }
+
+        .principal-content h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .principal-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .read-more-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 25px;
             text-decoration: none;
-        }
-
-        .footer-social-links a:hover {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .copyright {
-            font-size: 14px;
-            color: #94a3b8;
-            font-weight: 500;
-        }
-
-        .credits {
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        .credits a {
-            color: #ff6b35;
-            text-decoration: none;
+            border-radius: 25px;
             font-weight: 600;
-            transition: color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s ease;
         }
 
-        .credits a:hover {
-            color: #f7931e;
+        .read-more-btn:hover {
+            background: #e55c2e;
+            transform: translateY(-2px);
+        }
+
+        /* Academic Departments */
+        .departments-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .department-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .department-card-content {
+            padding: 25px;
+        }
+
+        .department-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .department-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .department-btn {
+            background: #2a5298;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .department-btn:hover {
+            background: #1e3c72;
+        }
+
+        /* News & Events */
+        .news-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            color: #ff6b35;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .news-card h3 {
+            margin: 10px 0;
+            color: #1e3c72;
+        }
+
+        .news-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .testimonials-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: #1e3c72;
+        }
+
+        .author-info p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ff6b35;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .top-bar .container {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
+            .principal-card {
+                grid-template-columns: 1fr;
             }
 
-            .main-header .container {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
+            .departments-grid {
+                grid-template-columns: 1fr;
             }
 
-            .college-info h1 {
-                font-size: 22px;
+            .carousel-content h1 {
+                font-size: 2rem;
             }
 
-            .accreditation-section {
-                align-items: center;
+            .carousel-content p {
+                font-size: 1rem;
             }
 
-            .nav-menu {
-                display: none;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .slide{grid-template-columns:1fr;gap:14px}
-            .principal .wrap{grid-template-columns:1fr}
-            .grid{grid-template-columns:repeat(2,1fr)}
-            .tour{grid-template-columns:1fr}
-
-            .footer-container {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 30px;
-                padding: 0 15px;
-            }
-
-            .footer-main {
-                padding: 30px 0;
-            }
-
-            .footer-bottom-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 640px){
-            .grid{grid-template-columns:1fr}
-            .ts-card{min-width:calc(100% - 32px)}
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <div id="header-container" class="loading">
-        Loading header...
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-slides" id="carouselSlides">
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?w=1200&h=500&fit=crop')">
+                    <div class="carousel-content">
+                        <h1>Welcome to GEC Bharuch</h1>
+                        <p>Government Engineering College, Bharuch - Shaping Tomorrow's Engineers</p>
+                        <a href="#" class="carousel-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&h=500&fit=crop')">
+                    <div class="carousel-content">
+                        <h1>Excellence in Education</h1>
+                        <p>NBA Accredited Programs | AICTE Approved | GTU Affiliated</p>
+                        <a href="#" class="carousel-btn">Explore Programs</a>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=500&fit=crop')">
+                    <div class="carousel-content">
+                        <h1>Innovation & Research</h1>
+                        <p>Fostering Innovation and Leadership for Socio-Professional Needs</p>
+                        <a href="#" class="carousel-btn">Research</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-controls carousel-prev" onclick="previousSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-controls carousel-next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="carousel-nav" id="carouselNav"></div>
+        </div>
+    </section>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="news-ticker-content">
+            🎓 NBA Accreditation received for Mechanical & Civil Engineering Departments • 
+            📅 Admission 2025-26 Open - Apply Now • 
+            🏆 Students Excel in Vibrant Gujarat Events • 
+            📚 One Week AICTE ATAL FDP on Water Quality & Quantity - Dec 11-16 • 
+            💼 Placement Drive 2025 - Registration Open
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Carousel -->
-        <header class="hero" aria-label="Highlights">
-            <div class="slides" id="slides">
-                <!-- About -->
-                <section class="slide container" aria-label="About GEC Bharuch">
-                    <div>
-                        <h1>About GEC Bharuch</h1>
-                        <p>Government Engineering College, Bharuch is one of the premier engineering colleges in Gujarat, committed to high-quality education and research.</p>
-                        <a href="#" class="cta">Read More</a>
-                    </div>
-                    <div class="photo">
-                        <img alt="Campus" src="https://images.unsplash.com/photo-1580584128409-3e5a7d63122d?q=80&w=1600&auto=format&fit=crop" />
-                    </div>
-                </section>
-
-                <!-- Vision & Mission -->
-                <section class="slide container" aria-label="Vision and Mission">
-                    <div>
-                        <h1>Vision &amp; Mission</h1>
-                        <p><strong>Vision:</strong> Impart value-based, industry-integrated education to nurture innovators and responsible professionals.</p>
-                        <p><strong>Mission:</strong> Strengthen academics, promote research &amp; innovation, and foster leadership by developing student potential.</p>
-                        <a href="#" class="cta">Explore</a>
-                    </div>
-                    <div class="photo">
-                        <img alt="Vision" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1600&auto=format&fit=crop" />
-                    </div>
-                </section>
-
-                <!-- Message teaser -->
-                <section class="slide container" aria-label="Message from Principal">
-                    <div>
-                        <h1>Message from the Principal</h1>
-                        <p>Building on our strengths and achievements, we continue to deliver quality education, research, and community impact.</p>
-                        <a href="#principal" class="cta">Read Message</a>
-                    </div>
-                    <div class="photo">
-                        <img alt="Principal" src="https://images.unsplash.com/photo-1607008820467-60f8a01f9d49?q=80&w=1600&auto=format&fit=crop" />
-                    </div>
-                </section>
-
-                <!-- News highlight -->
-                <section class="slide container" aria-label="News & Events">
-                    <div>
-                        <h1>News &amp; Announcements</h1>
-                        <p>Workshops, FDPs, placements, and research milestones—stay updated with the latest happenings across campus.</p>
-                        <a href="#" class="cta">All News</a>
-                    </div>
-                    <div class="photo">
-                        <img alt="News" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop" />
-                    </div>
-                </section>
-            </div>
-
-            <!-- Controls -->
-            <div class="controls">
-                <button class="btn" id="prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="btn" id="next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Dots -->
-            <div class="hero-nav" id="dots" aria-label="Slide navigation"></div>
-
-            <!-- News ticker -->
-            <div class="news-ticker" aria-label="News ticker">
-                <div class="ticker-inner">
-                    One Week AICTE ATAL FDP on "Assurance Modeling for Water Quality & Quantity" — 11th–16th Dec •
-                    ATAL FDP on "Renewable & Sustainable Systems" — 22nd–26th Apr •
-                    Placement Drive 2025 — <a href="#">Register Now</a> •
-                    Exam Timetable Released — <a href="#">Download PDF</a>
+    <!-- Principal Message -->
+    <section class="principal-section">
+        <div class="container">
+            <div class="principal-card">
+                <div class="principal-image">
+                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop" alt="Principal Dr. Pradeep Lodha">
                 </div>
-            </div>
-        </header>
-
-        <!-- Principal Message -->
-        <section id="principal" class="principal container" aria-label="Message from the Principal">
-            <div class="wrap">
-                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" alt="Principal Photograph">
-                <div>
-                    <h2>Message from Principal</h2>
-                    <p>Dear GEC Bharuch Family,</p>
-                    <p>As we step into another academic year, we reaffirm our commitment to excellence, inclusivity, and innovation. Our students continue to shine in academics, research, and community projects. We are expanding industry partnerships and fostering an ecosystem for entrepreneurship and lifelong learning.</p>
-                    <a class="btn" href="#">View More</a>
+                <div class="principal-content">
+                    <h2>Message from the Principal</h2>
+                    <p><strong>Dear GEC Bharuch Family,</strong></p>
+                    <p>As we step into another academic year, I reflect on our journey with immense pride and optimism. Last year was a testament to our resilience, adaptability, and commitment to excellence. We celebrated significant milestones, including the NBA accreditation of our Mechanical and Civil Engineering departments, marking a leap toward global competitiveness.</p>
+                    <p>This year, we build on our strengths and achievements. Our students continue to shine in academics, research, and community projects...</p>
+                    <a href="#" class="read-more-btn">Read Full Message</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Academic Departments -->
-        <section class="section container" aria-label="Academic Departments">
-            <h3>Academic Departments</h3>
-            <div class="grid">
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1581091870622-7f3c1cf5f1cf?q=80&w=1200&auto=format&fit=crop" alt="Electronics & Communication">
-                    <div class="body">
-                        <span class="tag">UG</span>
-                        <div class="title">Electronics & Communication Engineering</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1200&auto=format&fit=crop" alt="Electrical">
-                    <div class="body">
-                        <span class="tag">UG</span>
-                        <div class="title">Electrical Engineering</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200&auto=format&fit=crop" alt="Mechanical">
-                    <div class="body">
-                        <span class="tag">UG</span>
-                        <div class="title">Mechanical Engineering</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Civil">
-                    <div class="body">
-                        <span class="tag">UG</span>
-                        <div class="title">Civil Engineering</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1581093588401-16f8f8d2bb0d?q=80&w=1200&auto=format&fit=crop" alt="Chemical">
-                    <div class="body">
-                        <span class="tag">UG</span>
-                        <div class="title">Chemical Engineering</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="https://images.unsplash.com/photo-1553484771-471a5a09c221?q=80&w=1200&auto=format&fit=crop" alt="General">
-                    <div class="body">
-                        <span class="tag">Foundation</span>
-                        <div class="title">General / Applied Sciences</div>
-                        <a class="btn" href="#">Read More</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="container testimonials" aria-label="Testimonials">
-            <h3 style="margin:10px 0 16px">Testimonials</h3>
-            <div class="ts-viewport" style="overflow:hidden">
-                <div class="ts-track" id="tsTrack">
-                    <div class="ts-card">
-                        <div class="ts-head">
-                            <div class="avatar"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200&auto=format&fit=crop" alt="Parent"></div>
-                            <div>
-                                <div class="ts-name">Vijay Samadpuri</div>
-                                <div class="ts-role">Parent</div>
-                            </div>
-                        </div>
-                        <p>I am highly satisfied with the college's commitment to quality education and the growth I see in my ward.</p>
-                    </div>
-                    <div class="ts-card">
-                        <div class="ts-head">
-                            <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Soft Skills Trainer"></div>
-                            <div>
-                                <div class="ts-name">Supreeti Negi</div>
-                                <div class="ts-role">Soft Skills Trainer</div>
-                            </div>
-                        </div>
-                        <p>The training culture fosters innovation and professionalism. Students show remarkable growth.</p>
-                    </div>
-                    <div class="ts-card">
-                        <div class="ts-head">
-                            <div class="avatar"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&auto=format&fit=crop" alt="Student"></div>
-                            <div>
-                                <div class="ts-name">Nandan Vaidya</div>
-                                <div class="ts-role">Student</div>
-                            </div>
-                        </div>
-                        <p>The campus environment and faculty guidance have been instrumental to my learning journey.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Institute Tour & Counter -->
-        <section class="container tour" aria-label="Institute Tour and Visitor Counter">
-            <div>
-                <h3>Institute Tour</h3>
-                <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)">
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/3fumBcKC6RE"
-                        title="GEC Bharuch - Institute Tour" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
-                </div>
-            </div>
-
-            <aside class="counter" aria-live="polite">
-                <h4>Visitor Counter</h4>
-                <div class="value" id="visitCount">000000</div>
-                <p style="color:var(--muted);margin:8px 0 0">
-                    This demo counter uses your browser's storage. For a global counter across all visitors, hook this to a tiny API/database.
-                </p>
-            </aside>
-        </section>
-
-        <!-- Government Links -->
-        <div class="gov-strip" aria-label="Government Links">
-            <div class="container gov-wrap">
-                <a class="gov-link" href="https://www.india.gov.in/" target="_blank" rel="noopener">
-                    <img alt="National Portal of India" width="36" height="36"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Emblem_of_India.svg/120px-Emblem_of_India.svg.png">
-                    <span>india.gov.in</span>
-                </a>
-                <a class="gov-link" href="https://www.digitalgujarat.gov.in/" target="_blank" rel="noopener">
-                    <img alt="Digital Gujarat" width="36" height="36"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Seal_of_Gujarat.svg/120px-Seal_of_Gujarat.svg.png">
-                    <span>Digital Gujarat</span>
-                </a>
-                <a class="gov-link" href="https://eci.gov.in" target="_blank" rel="noopener">
-                    <img alt="Election Commission of India" width="36" height="36"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Election_Commission_of_India_Logo.svg/120px-Election_Commission_of_India_Logo.svg.png">
-                    <span>Voter Services</span>
-                </a>
-                <a class="gov-link" href="https://www.mygov.in/" target="_blank" rel="noopener">
-                    <img alt="MyGov" width="36" height="36"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/MyGov_India_Logo.svg/128px-MyGov_India_Logo.svg.png">
-                    <span>MyGov</span>
-                </a>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer Section -->
-    <div id="footer-container" class="loading">
-        Loading footer...
-    </div>
+    <!-- Academic Departments -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Departments</h2>
+                <p>Explore our world-class engineering programs</p>
+            </div>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=200&fit=crop" alt="Computer Engineering">
+                    <div class="department-card-content">
+                        <h3>Computer Engineering</h3>
+                        <p>Cutting-edge curriculum in software development, AI, machine learning, and emerging technologies.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=200&fit=crop" alt="Mechanical Engineering">
+                    <div class="department-card-content">
+                        <h3>Mechanical Engineering</h3>
+                        <p>NBA Accredited program focusing on design, manufacturing, and thermal systems.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=200&fit=crop" alt="Civil Engineering">
+                    <div class="department-card-content">
+                        <h3>Civil Engineering</h3>
+                        <p>NBA Accredited program in structural engineering, transportation, and environmental systems.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?w=400&h=200&fit=crop" alt="Electrical Engineering">
+                    <div class="department-card-content">
+                        <h3>Electrical Engineering</h3>
+                        <p>Power systems, electronics, control systems, and renewable energy technologies.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1581091870622-7f3c1cf5f1cf?w=400&h=200&fit=crop" alt="Electronics & Communication">
+                    <div class="department-card-content">
+                        <h3>Electronics & Communication</h3>
+                        <p>Communication systems, VLSI design, embedded systems, and signal processing.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="department-card">
+                    <img src="https://images.unsplash.com/photo-1581093588401-16f8f8d2bb0d?w=400&h=200&fit=crop" alt="Chemical Engineering">
+                    <div class="department-card-content">
+                        <h3>Chemical Engineering</h3>
+                        <p>Process engineering, petroleum refining, petrochemicals, and environmental engineering.</p>
+                        <a href="#" class="department-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News & Events</h2>
+                <p>Stay updated with recent happenings at GEC Bharuch</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=200&fit=crop" alt="AICTE FDP">
+                    <div class="news-card-content">
+                        <div class="news-date">December 2024</div>
+                        <h3>AICTE ATAL FDP on Water Quality & Quantity</h3>
+                        <p>One week Faculty Development Program from December 11-16, 2024 focusing on assurance modeling for water quality and quantity.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=200&fit=crop" alt="NBA Accreditation">
+                    <div class="news-card-content">
+                        <div class="news-date">November 2024</div>
+                        <h3>NBA Accreditation Achievement</h3>
+                        <p>Mechanical and Civil Engineering departments receive NBA accreditation, marking global competitiveness standards.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=200&fit=crop" alt="Placement Drive">
+                    <div class="news-card-content">
+                        <div class="news-date">January 2025</div>
+                        <h3>Placement Drive 2025</h3>
+                        <p>Annual placement drive begins with leading companies participating. Students encouraged to register early.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What People Say</h2>
+                <p>Testimonials from our students, parents, and industry partners</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I am highly satisfied with the college's commitment to quality education and the growth I see in my ward. The faculty is dedicated and supportive."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=100&h=100&fit=crop" alt="Vijay Samadpuri">
+                        <div class="author-info">
+                            <h4>Vijay Samadpuri</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The training culture fosters innovation and professionalism. Students show remarkable growth in both technical and interpersonal skills."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Supreeti Negi">
+                        <div class="author-info">
+                            <h4>Supreeti Negi</h4>
+                            <p>Soft Skills Trainer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The campus environment and faculty guidance have been instrumental to my learning journey. GEC Bharuch provides excellent opportunities for growth."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop" alt="Nandan Vaidya">
+                        <div class="author-info">
+                            <h4>Nandan Vaidya</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>2000+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Faculty Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>6</h3>
+                    <p>Departments</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
 
     <script>
-        // Function to load external HTML content
-        async function loadComponent(url, containerId) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const html = await response.text();
-                
-                // Create a temporary div to parse the HTML
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = html;
-                
-                // Extract the specific component (header or footer)
-                let component;
-                if (containerId === 'header-container') {
-                    component = tempDiv.querySelector('header');
-                } else if (containerId === 'footer-container') {
-                    component = tempDiv.querySelector('footer');
-                }
-                
-                if (component) {
-                    document.getElementById(containerId).innerHTML = component.outerHTML;
-                } else {
-                    // If no specific tag found, use the entire content
-                    document.getElementById(containerId).innerHTML = html;
-                }
-            } catch (error) {
-                console.error(`Error loading ${url}:`, error);
-                // Fallback: Create basic header/footer if external files fail
-                createFallbackComponent(containerId);
-            }
-        }
-
-        // Fallback function to create basic header/footer if external files don't load
-        function createFallbackComponent(containerId) {
-            if (containerId === 'header-container') {
-                document.getElementById(containerId).innerHTML = `
-                    <header class="header">
-                        <div class="top-bar">
-                            <div class="container">
-                                <div class="contact-info">
-                                    <span>📞 +912642227054</span>
-                                    <span>✉️ gec-bharuch-dte@gujarat.gov.in</span>
-                                </div>
-                                <a href="#" class="student-support-btn">STUDENT SUPPORT SYSTEM</a>
-                            </div>
-                        </div>
-                        <div class="main-header">
-                            <div class="container">
-                                <div class="logo-section">
-                                    <img src="https://via.placeholder.com/80x80/1e3c72/ffffff?text=GEC" alt="GEC Bharuch Logo" class="college-logo">
-                                    <div class="college-info">
-                                        <h1>GOVERNMENT ENGINEERING COLLEGE, BHARUCH</h1>
-                                        <p class="subtitle">(UNDER DIRECTORATE OF TECHNICAL EDUCATION)</p>
-                                    </div>
-                                </div>
-                                <div class="accreditation-section">
-                                    <div class="accreditation-text">APPROVED BY AICTE</div>
-                                    <div class="accreditation-text">AFFILIATED TO GUJARAT TECHNOLOGICAL UNIVERSITY</div>
-                                    <img src="https://via.placeholder.com/60x60/ff6b35/ffffff?text=GOI" alt="Government of India Emblem" class="govt-emblem">
-                                </div>
-                            </div>
-                        </div>
-                        <nav class="navigation">
-                            <div class="nav-container">
-                                <ul class="nav-menu">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/about">About</a></li>
-                                    <li><a href="/academics">Academics</a></li>
-                                    <li><a href="/departments">Departments</a></li>
-                                    <li><a href="/campus">Campus</a></li>
-                                    <li><a href="/facilities">Facilities</a></li>
-                                    <li><a href="/activities">Activities</a></li>
-                                    <li><a href="/links">Useful Links</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </header>
-                `;
-            } else if (containerId === 'footer-container') {
-                document.getElementById(containerId).innerHTML = `
-                    <footer class="footer">
-                        <div class="footer-main">
-                            <div class="footer-container">
-                                <div class="footer-section">
-                                    <h4>Quick Links</h4>
-                                    <a href="/about">About</a>
-                                    <a href="/admissions">Admissions</a>
-                                    <a href="/departments">Departments</a>
-                                    <a href="/facilities">Facilities</a>
-                                </div>
-                                <div class="footer-section">
-                                    <h4>Academics</h4>
-                                    <a href="/courses">Courses</a>
-                                    <a href="/calendar">Academic Calendar</a>
-                                    <a href="/examination">Examination</a>
-                                </div>
-                                <div class="footer-section">
-                                    <h4>Campus Life</h4>
-                                    <a href="/hostel">Hostel</a>
-                                    <a href="/library">Library</a>
-                                    <a href="/sports">Sports</a>
-                                </div>
-                                <div class="footer-section">
-                                    <h4>Contact</h4>
-                                    <a href="tel:+912642227054">📞 +912642227054</a>
-                                    <a href="mailto:gec-bharuch-dte@gujarat.gov.in">✉️ gec-bharuch-dte@gujarat.gov.in</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom">
-                            <div class="footer-bottom-container">
-                                <div class="footer-social-links">
-                                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                                <div class="copyright">© All rights reserved 2025</div>
-                                <div class="credits">GEC Bharuch Education Base</div>
-                            </div>
-                        </div>
-                    </footer>
-                `;
-            }
-        }
-
-        // Load header and footer when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Try to load external header and footer files
-            // If these files don't exist, fallback components will be created
-            loadComponent('header.html', 'header-container');
-            loadComponent('footer.html', 'footer-container');
-
-            // Initialize carousel and other interactive elements
-            initializeCarousel();
-            initializeTestimonials();
-            initializeVisitorCounter();
-        });
+        // Include header.html and footer.html
+        fetch('header.html').then(response => response.text()).then(data => document.getElementById('header').innerHTML = data);
+        fetch('footer.html').then(response => response.text()).then(data => document.getElementById('footer').innerHTML = data);
 
         // Carousel functionality
-        function initializeCarousel() {
-            const slides = document.getElementById('slides');
-            const dotsWrap = document.getElementById('dots');
-            const total = slides.children.length;
-            let index = 0, timer;
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
 
-            function renderDots(){
-                dotsWrap.innerHTML = '';
-                for(let i=0;i<total;i++){
-                    const b=document.createElement('button');
-                    b.className = 'dot'+(i===index?' active':'');
-                    b.setAttribute('aria-label', 'Go to slide '+(i+1));
-                    b.onclick = ()=>{ index=i; update(); resetAuto(); };
-                    dotsWrap.appendChild(b);
+        // Create navigation dots
+        const navContainer = document.getElementById('carouselNav');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'carousel-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            navContainer.appendChild(dot);
+        }
+
+        function updateCarousel() {
+            const slidesContainer = document.getElementById('carouselSlides');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
-            }
-            
-            function update(){
-                slides.style.transform = `translateX(-${index*100}%)`;
-                [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active', i===index));
-            }
-            
-            function next(){ index = (index+1)%total; update(); }
-            function prev(){ index = (index-1+total)%total; update(); }
-            function resetAuto(){ clearInterval(timer); timer=setInterval(next, 6000); }
-
-            document.getElementById('next').onclick = ()=>{ next(); resetAuto(); };
-            document.getElementById('prev').onclick = ()=>{ prev(); resetAuto(); };
-
-            renderDots(); update(); resetAuto();
-        }
-
-        // Testimonials auto scroll
-        function initializeTestimonials() {
-            const tsTrack = document.getElementById('tsTrack');
-            let tsOffset = 0;
-            
-            setInterval(()=>{
-                const cardW = tsTrack.children[0].getBoundingClientRect().width + 16;
-                tsOffset = (tsOffset + 1) % (cardW * tsTrack.children.length);
-                tsTrack.style.transform = `translateX(-${tsOffset}px)`;
-            }, 40);
-        }
-
-        // Visitor counter
-        function initializeVisitorCounter() {
-            const COUNTER_KEY = 'gec_total_visits';
-            const LAST_KEY = 'gec_last_visit_at';
-            const now = Date.now();
-            const last = Number(localStorage.getItem(LAST_KEY) || 0);
-            const day = 24*60*60*1000;
-
-            let count = Number(localStorage.getItem(COUNTER_KEY) || 0);
-            if (!last || (now - last) > day){
-                count += 1;
-                localStorage.setItem(COUNTER_KEY, String(count));
-                localStorage.setItem(LAST_KEY, String(now));
-            }
-            
-            const el = document.getElementById('visitCount');
-            const pad = n => n.toString().padStart(6,'0');
-            el.textContent = pad(count);
-        }
+            });
+        });
     </script>
 </body>
 </html>
