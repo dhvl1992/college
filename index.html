@@ -557,29 +557,66 @@
             color: #ff6b35;
         }
 
-        /* Stats Section */
-        .stats-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
+        /* Government Links Section */
+        .govt-links-section {
+            padding: 40px 0;
+            background: #e9ecef;
+            border-top: 1px solid #dee2e6;
         }
 
-        .stats-grid {
+        .govt-links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            align-items: center;
         }
 
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #ff6b35;
+        .govt-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 350px;
         }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .govt-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .govt-link img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .govt-link-content h3 {
+            margin: 0 0 5px 0;
+            color: #1e3c72;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .govt-link-content h4 {
+            margin: 0;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .govt-link-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -600,8 +637,13 @@
                 font-size: 1rem;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .govt-links-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .govt-link {
+                max-width: 100%;
             }
 
             .vision-mission-grid {
@@ -896,26 +938,32 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Government Links Section -->
+    <section class="govt-links-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>2000+</h3>
-                    <p>Students</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100+</h3>
-                    <p>Faculty Members</p>
-                </div>
-                <div class="stat-item">
-                    <h3>6</h3>
-                    <p>Departments</p>
-                </div>
-                <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Years of Excellence</p>
-                </div>
+            <div class="govt-links-grid">
+                <a href="https://www.nvsp.in/" target="_blank" rel="noopener" class="govt-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Election_Commission_of_India_Logo.svg/120px-Election_Commission_of_India_Logo.svg.png" alt="Online Services for Voters">
+                    <div class="govt-link-content">
+                        <h4>Online Services for</h4>
+                        <h3>VOTERS</h3>
+                        <p>www.eci.nic.in | www.nvsp.in</p>
+                    </div>
+                </a>
+                <a href="https://www.india.gov.in/" target="_blank" rel="noopener" class="govt-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Emblem_of_India.svg/120px-Emblem_of_India.svg.png" alt="National Portal of India">
+                    <div class="govt-link-content">
+                        <h3>india.gov.in</h3>
+                        <p>National Portal of India</p>
+                    </div>
+                </a>
+                <a href="https://www.digitalgujarat.gov.in/" target="_blank" rel="noopener" class="govt-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Seal_of_Gujarat.svg/120px-Seal_of_Gujarat.svg.png" alt="Digital Gujarat">
+                    <div class="govt-link-content">
+                        <h3>Digital Gujarat</h3>
+                        <p>Government of Gujarat Portal</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
