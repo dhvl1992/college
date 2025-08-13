@@ -1,51 +1,280 @@
-<!-- Visitor Counter -->
-<div class="visitor-counter">
-    <h3>VISITOR COUNTER</h3>
-    <div class="visitor-number">0001749</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEC Bharuch - Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>MOU Details</h3>
-                <ul>
-                    <li><a href="#">MOU under Strategic Partnership</a></li>
-                    <li><a href="#">MOU under Internship</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Information</h3>
-                <ul>
-                    <li><a href="#">Tender Notices</a></li>
-                    <li><a href="#">Right to Information Act</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Important Documents</h3>
-                <ul>
-                    <li><a href="#">NEP 2020</a></li>
-                    <li><a href="#">TEM</a></li>
-                    <li><a href="#">Inspection Manual</a></li>
-                    <li><a href="#">Purchase Related Documents</a></li>
-                    <li><a href="#">Orientation Presentation</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Students Grievance redressal Cell</a></li>
-                </ul>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            margin-top: auto;
+        }
+
+        .footer-main {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            padding: 40px 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 2px;
+        }
+
+        .footer-section a {
+            color: #e2e8f0;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+            padding-left: 15px;
+        }
+
+        .footer-section a::before {
+            content: '▶';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-size: 10px;
+        }
+
+        .footer-section a:hover::before {
+            opacity: 1;
+            left: 0;
+        }
+
+        .footer-bottom {
+            background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .credits {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .credits a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .credits a:hover {
+            color: #f7931e;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .footer-main {
+                padding: 30px 0;
+            }
+
+            .footer-bottom-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-section h4 {
+                font-size: 16px;
+            }
+
+            .footer-section a {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .copyright, .credits {
+                font-size: 12px;
+            }
+        }
+
+        /* Animation for footer sections */
+        .footer-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .footer-section:nth-child(1) { animation-delay: 0.1s; }
+        .footer-section:nth-child(2) { animation-delay: 0.2s; }
+        .footer-section:nth-child(3) { animation-delay: 0.3s; }
+        .footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>MOU Details</h4>
+                    <a href="https://gecbharuch.com/mou/strategic-partnership/">MOU under Strategic Partnership</a>
+                    <a href="https://gecbharuch.com/mou/internship/">MOU under Internship</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Information</h4>
+                    <a href="https://gecbharuch.com/information/tender-notices/">Tender Notices</a>
+                    <a href="https://gecbharuch.com/information/rti/">Right to Information Act</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Important Documents</h4>
+                    <a href="https://gecbharuch.com/documents/nep-2020/">NEP 2020</a>
+                    <a href="https://gecbharuch.com/documents/teim/">TEIM</a>
+                    <a href="https://gecbharuch.com/documents/inspection-manual/">Inspection Manual</a>
+                    <a href="https://gecbharuch.com/documents/purchase-related/">Purchase Related Documents</a>
+                    <a href="https://gecbharuch.com/documents/orientation/">Orientation Presentation</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="https://gecbharuch.com/feedback/">Feedback</a>
+                    <a href="https://gecbharuch.com/grievance/">Students Grievance Redressal Cell</a>
+                </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <div style="margin-bottom: 10px;">
-                <a href="#" style="color: #ccc; margin-right: 15px; font-size: 18px;">🌐</a>
-                <a href="#" style="color: #ccc; font-size: 18px;">📺</a>
+            <div class="footer-bottom-container">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/gecbharuch" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/gecbharuch" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gecbharuch.official" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gecbharuch" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
+                <div class="copyright">
+                    © All rights reserved 2023
+                </div>
+
+                <div class="credits">
+                    GEC Bharuch Education Base by <a href="#" target="_blank">Acme Themes</a>
+                </div>
             </div>
-            <p>© All right reserved 2023 | GEC Bharuch Education Base by <a href="#" style="color: #ff6b35; text-decoration: none;">Acme Themes</a></p>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>
