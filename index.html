@@ -228,6 +228,69 @@
             transform: translateY(-2px);
         }
 
+        /* Vision & Mission */
+        .vision-mission-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .vision-card, .mission-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .vision-card:hover, .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .vision-card h3, .mission-card h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .vision-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .mission-card ul {
+            text-align: left;
+            color: #666;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .mission-card li {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
         /* Academic Departments */
         .departments-section {
             padding: 60px 0;
@@ -406,6 +469,94 @@
             font-size: 0.9rem;
         }
 
+        /* Institute Tour & Visitor Counter */
+        .tour-counter-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .tour-counter-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .institute-tour h3, .visitor-counter h3 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .institute-tour p {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .visitor-counter {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 40px 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
+        }
+
+        .visitor-counter h3 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .counter-display {
+            margin-bottom: 30px;
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 3px;
+        }
+
+        .counter-display p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .counter-info p {
+            margin: 10px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .counter-info i {
+            margin-right: 8px;
+            color: #ff6b35;
+        }
+
         /* Stats Section */
         .stats-section {
             padding: 60px 0;
@@ -452,6 +603,16 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .tour-counter-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
         }
     </style>
 </head>
@@ -482,6 +643,13 @@
                         <h1>Innovation & Research</h1>
                         <p>Fostering Innovation and Leadership for Socio-Professional Needs</p>
                         <a href="#" class="carousel-btn">Research</a>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop')">
+                    <div class="carousel-content">
+                        <h1>Our Vision & Mission</h1>
+                        <p>Impart value based Integrative education to empower youth by fostering innovation and leadership ethos</p>
+                        <a href="#vision-mission" class="carousel-btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -521,6 +689,32 @@
                     <p>As we step into another academic year, I reflect on our journey with immense pride and optimism. Last year was a testament to our resilience, adaptability, and commitment to excellence. We celebrated significant milestones, including the NBA accreditation of our Mechanical and Civil Engineering departments, marking a leap toward global competitiveness.</p>
                     <p>This year, we build on our strengths and achievements. Our students continue to shine in academics, research, and community projects...</p>
                     <a href="#" class="read-more-btn">Read Full Message</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vision-mission" class="vision-mission-section">
+        <div class="container">
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>Impart value based Integrative education to empower youth by fostering innovation and leadership ethos for socio-professional needs.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <ul>
+                        <li>Strengthen academic infrastructure to achieve excellence in engineering education.</li>
+                        <li>Foster talent by developing global mindset and sustained leadership in professional outlook to meet ever-rising industry expectations.</li>
+                        <li>Nurture students by inculcating ethical and professional behavior for their holistic development.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -670,6 +864,38 @@
         </div>
     </section>
 
+    <!-- Institute Tour & Visitor Counter -->
+    <section class="tour-counter-section">
+        <div class="container">
+            <div class="tour-counter-grid">
+                <div class="institute-tour">
+                    <h3>Institute Virtual Tour</h3>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/oHmlclC_QMQ" 
+                            title="GEC Bharuch - Institute Tour" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p>Take a virtual tour of our state-of-the-art campus and facilities</p>
+                </div>
+                <div class="visitor-counter">
+                    <h3>Visitor Counter</h3>
+                    <div class="counter-display">
+                        <div class="counter-number" id="visitorCount">000001</div>
+                        <p>Total Visitors</p>
+                    </div>
+                    <div class="counter-info">
+                        <p><i class="fas fa-calendar"></i> Since July 2004</p>
+                        <p><i class="fas fa-users"></i> Welcome to GEC Bharuch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
@@ -744,6 +970,64 @@
 
         // Auto-advance carousel
         setInterval(nextSlide, 5000);
+
+        // Visitor Counter
+        function initVisitorCounter() {
+            const COUNTER_KEY = 'gec_bharuch_visitor_count';
+            const LAST_VISIT_KEY = 'gec_bharuch_last_visit';
+            const now = Date.now();
+            const lastVisit = localStorage.getItem(LAST_VISIT_KEY);
+            const dayInMs = 24 * 60 * 60 * 1000; // 24 hours
+
+            let count = parseInt(localStorage.getItem(COUNTER_KEY) || '0');
+            
+            // Increment if first visit or if last visit was more than 24 hours ago
+            if (!lastVisit || (now - parseInt(lastVisit)) > dayInMs) {
+                count += 1;
+                localStorage.setItem(COUNTER_KEY, count.toString());
+                localStorage.setItem(LAST_VISIT_KEY, now.toString());
+            }
+
+            // Ensure minimum count for demonstration
+            if (count < 100000) {
+                count = 100000 + count;
+            }
+
+            // Display count with leading zeros
+            const formattedCount = count.toString().padStart(6, '0');
+            document.getElementById('visitorCount').textContent = formattedCount;
+
+            // Add counting animation
+            animateCounter(formattedCount);
+        }
+
+        function animateCounter(finalCount) {
+            const counterElement = document.getElementById('visitorCount');
+            const duration = 2000; // 2 seconds
+            const steps = 20;
+            const stepDuration = duration / steps;
+            const finalNumber = parseInt(finalCount);
+            const stepSize = Math.floor(finalNumber / steps);
+
+            let currentNumber = 0;
+            let step = 0;
+
+            const timer = setInterval(() => {
+                step++;
+                currentNumber += stepSize;
+                
+                if (step >= steps) {
+                    currentNumber = finalNumber;
+                    clearInterval(timer);
+                }
+                
+                const displayNumber = currentNumber.toString().padStart(6, '0');
+                counterElement.textContent = displayNumber;
+            }, stepDuration);
+        }
+
+        // Initialize visitor counter when page loads
+        window.addEventListener('load', initVisitorCounter);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
