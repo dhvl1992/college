@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About GEC Bharuch - Government Engineering College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 0;
+            margin-top: 0;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+
+
+        /* Main Content Area */
+        .main-content {
+            padding: 40px 0;
+            min-height: 60vh;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        .content-area {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .content-area h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 10px;
+        }
+
+        .content-area h3 {
+            color: #1e3c72;
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+        }
+
+        .content-area p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-area ul, .content-area ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .content-area li {
+            margin-bottom: 10px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .content-area blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #ff6b35;
+            margin: 20px 0;
+            padding: 20px 30px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .content-area table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .content-area th,
+        .content-area td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .content-area th {
+            background: #f8f9fa;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-widget h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #ff6b35;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 0;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 12px 0;
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            color: #1e3c72;
+            padding-left: 15px;
+        }
+
+        .sidebar-menu a:hover::before,
+        .sidebar-menu a.active::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-size: 0.8rem;
+        }
+
+        /* Social Media Links */
+        .social-media {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #f8f9fa;
+            color: #1e3c72;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+
+        .social-links a:hover {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        .social-links a.facebook:hover { background: #3b5998; }
+        .social-links a.youtube:hover { background: #ff0000; }
+        .social-links a.instagram:hover { background: #e4405f; }
+        .social-links a.linkedin:hover { background: #0077b5; }
+
+        /* Calendar Widget */
+        .calendar-widget {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calendar-header h4 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .calendar-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .calendar-body {
+            padding: 20px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-top: 15px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #666;
+            padding: 8px 4px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 8px 4px;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .calendar-day:hover {
+            background: #f8f9fa;
+        }
+
+        .calendar-day.today {
+            background: #ff6b35;
+            color: white;
+            font-weight: 600;
+        }
+
+        .calendar-day.other-month {
+            color: #ccc;
+        }
+
+
+
+        /* Quick Info Box */
+        .quick-info {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .quick-info h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .quick-info p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .quick-info .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .quick-info .contact-item i {
+            color: #ff6b35;
+            width: 16px;
+        }
+
+        /* Image Styles */
+        .content-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #e55c2e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #2a5298;
+        }
+
+        .btn-secondary:hover {
+            background: #1e3c72;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .content-area {
+                padding: 25px;
+            }
+
+            .sidebar {
+                order: -1; /* Move sidebar above content on mobile */
+            }
+        }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 25px 0;
+            }
+
+            .page-header h1 {
+                font-size: 1.7rem;
+            }
+
+            .content-area {
+                padding: 20px;
+            }
+
+            .sidebar-widget {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About GEC Bharuch</h1>
+            <p>Government Engineering College, Bharuch - Excellence in Engineering Education</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content Area -->
+                <article class="content-area">
+                    <h2>About Government Engineering College, Bharuch</h2>
+                    
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=400&fit=crop" alt="GEC Bharuch Campus" class="content-image">
+                    <p class="image-caption">GEC Bharuch Campus - A Hub of Engineering Excellence</p>
+
+                    <p>Government Engineering College, Bharuch is one of eight New Government Engineering Colleges established in July 2004. It was established with the foresight to get talented engineers in the field of Electrical Engineering, Mechanical Engineering, Electronics & Communication Engineering, Civil Engineering and Chemical Engineering.</p>
+
+                    <h3>Our Heritage</h3>
+                    <p>The institute offers an outstanding learning environment with faculties dedicated to providing students global business capabilities required for success. The learning experience is influenced by the most recent developments in the field and delivered by experienced teachers and experts from various engineering disciplines.</p>
+
+                    <h3>Accreditation & Affiliation</h3>
+                    <p>The academic programmes are recognized by All India Council for Technical Education (AICTE) and the college is affiliated to Gujarat Technological University, Ahmedabad. It is administered by Education Department, Gujarat State.</p>
+
+                    <blockquote>
+                        "GEC Bharuch stands as a beacon of engineering education in Gujarat, fostering innovation and excellence in technical education since 2004."
+                    </blockquote>
+
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>NBA Accreditation for Mechanical and Civil Engineering departments</li>
+                        <li>AICTE approved programs across all engineering disciplines</li>
+                        <li>Strong industry partnerships and placement records</li>
+                        <li>Active research and development initiatives</li>
+                        <li>Student achievements in national and international competitions</li>
+                    </ul>
+
+                    <h3>Campus Facilities</h3>
+                    <p>The college is equipped with state-of-the-art infrastructure including modern laboratories, well-stocked library, hostel facilities, sports complex, and various other amenities to support holistic development of students.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Department</th>
+                                <th>Established</th>
+                                <th>Intake</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Civil Engineering</td>
+                                <td>2004</td>
+                                <td>60</td>
+                                <td>NBA Accredited</td>
+                            </tr>
+                            <tr>
+                                <td>Mechanical Engineering</td>
+                                <td>2004</td>
+                                <td>120</td>
+                                <td>NBA Accredited</td>
+                            </tr>
+                            <tr>
+                                <td>Electrical Engineering</td>
+                                <td>2004</td>
+                                <td>60</td>
+                                <td>AICTE Approved</td>
+                            </tr>
+                            <tr>
+                                <td>Electronics & Communication</td>
+                                <td>2004</td>
+                                <td>60</td>
+                                <td>AICTE Approved</td>
+                            </tr>
+                            <tr>
+                                <td>Chemical Engineering</td>
+                                <td>2004</td>
+                                <td>60</td>
+                                <td>AICTE Approved</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For more information about admissions, academic programs, or campus facilities, please feel free to contact us or visit our campus.</p>
+
+                    <a href="/contact/" class="btn">Contact Us</a>
+                    <a href="/academics/" class="btn btn-secondary">Academic Programs</a>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Quick Info -->
+                    <div class="sidebar-widget">
+                        <div class="quick-info">
+                            <h4>Quick Contact</h4>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 2642 227054</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>gec-bharuch-dte@gujarat.gov.in</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bholav, Bharuch - 392002</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="sidebar-widget">
+                        <div class="social-media">
+                            <h3>Connect With Us</h3>
+                            <p>Follow us on social media for latest updates</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/gecbharuch" target="_blank" class="facebook" title="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.youtube.com/gecbharuch" target="_blank" class="youtube" title="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://www.instagram.com/gecbharuch.official" target="_blank" class="instagram" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/gecbharuch" target="_blank" class="linkedin" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Widget -->
+                    <div class="sidebar-widget">
+                        <div class="calendar-widget">
+                            <div class="calendar-header">
+                                <h4 id="currentMonth">January 2025</h4>
+                                <p>Academic Calendar</p>
+                            </div>
+                            <div class="calendar-body">
+                                <div class="calendar-grid" id="calendarGrid">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Include header.html and footer.html
+        fetch('header.html').then(response => response.text()).then(data => document.getElementById('header').innerHTML = data);
+        fetch('footer.html').then(response => response.text()).then(data => document.getElementById('footer').innerHTML = data);
+
+        // Calendar functionality
+        function generateCalendar() {
+            const now = new Date();
+            const currentMonth = now.getMonth();
+            const currentYear = now.getFullYear();
+            const today = now.getDate();
+
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            // Update month header
+            document.getElementById('currentMonth').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+            // Get first day of month and number of days
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+
+            // Add day headers
+            dayNames.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'calendar-day-header';
+                dayHeader.textContent = day;
+                calendarGrid.appendChild(dayHeader);
+            });
+
+            // Add previous month's trailing days
+            for (let i = firstDay - 1; i >= 0; i--) {
+                const day = document.createElement('div');
+                day.className = 'calendar-day other-month';
+                day.textContent = daysInPrevMonth - i;
+                calendarGrid.appendChild(day);
+            }
+
+            // Add current month's days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                
+                if (day === today) {
+                    dayElement.classList.add('today');
+                }
+                
+                calendarGrid.appendChild(dayElement);
+            }
+
+            // Add next month's leading days
+            const totalCells = calendarGrid.children.length;
+            const remainingCells = 42 - totalCells + 7; // 6 weeks * 7 days - day headers
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day other-month';
+                dayElement.textContent = day;
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        // Initialize calendar when page loads
+        window.addEventListener('load', generateCalendar);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
